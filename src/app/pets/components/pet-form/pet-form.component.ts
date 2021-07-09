@@ -60,8 +60,8 @@ export class PetFormComponent implements OnInit {
     this.petForm.patchValue({
       name: pet.attributes.name,
       dateOfBirth: new Date(pet.attributes.dateOfBirth),
-      selctedBreed,
-      selectedSpecie
+      breed: selctedBreed,
+      specie: selectedSpecie
     })
     this.changeImage();
     this.editMode = true;
