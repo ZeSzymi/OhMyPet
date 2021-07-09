@@ -9,7 +9,7 @@
                 </div>
                 <mat-form-field class="w-100" >
                     <mat-label>Name</mat-label>
-                    <input matInput placeholder="Rex" value="Rex">
+                    <input matInput formControlName="name" placeholder="Rex" value="Rex">
                 </mat-form-field>
                 <div class="w-100">
                     <mat-form-field class="w-100">
@@ -39,7 +39,10 @@
                         </mat-select>
                     </mat-form-field>
                 </div>
-                <button class="button-form" (click)="addPet()">Save</button>
+                <div class="d-flex justify-content-between w-100">
+                    <button class="button-form" (click)="addPet()">Save</button>
+                    <button class="delete-button" *ngIf="editMode" (click)="deletePet()">Delete</button>
+                </div>
             </div>
         </form>
         <div class="pet-card pet-form mb-4" *ngIf="editMode">

@@ -88,8 +88,16 @@ export class PetFormComponent implements OnInit {
                     .split("T")[0];
                         
     const user = this.authService.getUser();
-    this.petsService.addPet(user.userId, breedId, dateOfBirth, name).subscribe(() => this.router.navigate(['app/dashboard']));
+    if (this.editMode) {
+      this.petsService.editPet(user.userId, breedId, dateOfBirth, name, this.petId).subscribe(() => this.router.navigate(['app/dashboard']));
+    } else {
+      this.petsService.addPet(user.userId, breedId, dateOfBirth, name).subscribe(() => this.router.navigate(['app/dashboard']));
+    }
+   
   }
 
+  deletePet() {
+    this.petsService.deletePet(this.petId).subscribe(() => this.router.navigate(['/app/dashboard']))
+  }
   
 }

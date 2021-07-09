@@ -1,26 +1,26 @@
 <div class="d-flex justify-content-center">
-  <div class="d-flex flex-column">
-      <form [formGroup]="petNoteForm">
-          <div>
-              <h1 >Add new note </h1>
-              <mat-form-field class="w-100" >
-                  <mat-label>Name</mat-label>
-                  <input matInput placeholder="Vist" value="Vist">
-              </mat-form-field>
-              <mat-form-field class="w-100" >
-                <mat-label>Duration</mat-label>
-                <input matInput type="number" value="30">
-            </mat-form-field>
-              <div class="w-100">
-                  <mat-form-field class="w-100">
-                      <mat-label>Date</mat-label>
-                      <input matInput [matDatepicker]="picker" formControlName="date">
-                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                      <mat-datepicker #picker></mat-datepicker>
-                    </mat-form-field>
-              </div>
-              <button class="button-form" >Save</button>
-          </div>
-      </form>
-  </div>
+    <div class="d-flex flex-column">
+        <form [formGroup]="petNoteForm">
+            <div>
+                <h1>Add new note </h1>
+                <mat-form-field class="w-100">
+                    <mat-label>Name</mat-label>
+                    <input formControlName="name" matInput placeholder="Vist" value="Vist">
+                </mat-form-field>
+                <mat-form-field class="w-100">
+                    <mat-label>Duration</mat-label>
+                    <input formControlName="duration" matInput type="number" value="30">
+                </mat-form-field>
+                <div class="w-100">
+                    <mat-form-field class="w-100">
+                        <mat-label>Date</mat-label>
+                        <input matInput [matDatepicker]="picker" formControlName="date">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                      </mat-form-field>
+                </div>
+                <button (click)="addUserNote()" class="button-form">Save</button>
+            </div>
+        </form>
+    </div>
 </div>

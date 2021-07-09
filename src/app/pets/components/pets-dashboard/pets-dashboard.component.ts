@@ -24,10 +24,7 @@ export class PetsDashboardComponent implements OnInit {
     this.route.parent?.data.subscribe((data) => {
       this.breeds = data.breeds;
       this.species =  data.species;
-      console.log(this.breeds, this.species);
     });
-    
-    
   }
 
   onFiltersChange() {
