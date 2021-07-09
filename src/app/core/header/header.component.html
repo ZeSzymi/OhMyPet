@@ -1,0 +1,7 @@
+<div class="header">
+    <div>Oh My Pet!</div>
+    <div *ngIf="isAuthorized">
+        {{user?.email}}
+        <div class="signout" (click)="signout()">signout</div>
+    </div>
+</div>

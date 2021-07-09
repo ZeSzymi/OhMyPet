@@ -1,0 +1,14 @@
+@import '../../../assets/css/variables.scss';
+
+.header {
+    margin-bottom: 10px;
+    background-color: $primary-color;
+    box-shadow: $box-shadow;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.signout {
+    text-align: right;
+}

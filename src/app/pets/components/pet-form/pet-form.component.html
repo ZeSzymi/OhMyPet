@@ -1,0 +1,52 @@
+<div class="d-flex justify-content-center mt-5">
+    <div class="d-flex flex-column">
+        <form [formGroup]="petForm">
+            <div class="pet-card pet-form mb-5">
+                <h3 *ngIf="!editMode">Add new pet</h3>
+                <h3 *ngIf="editMode">{{petForm.value.name}}</h3>
+                <div>
+                    <img class="pet-img mb-4"  [src]="'assets/img/' + petImage" />
+                </div>
+                <mat-form-field class="w-100" >
+                    <mat-label>Name</mat-label>
+                    <input matInput placeholder="Rex" value="Rex">
+                </mat-form-field>
+                <div class="w-100">
+                    <mat-form-field class="w-100">
+                        <mat-label>Date Of Birth</mat-label>
+                        <input matInput [matDatepicker]="picker" formControlName="dateOfBirth">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                      </mat-form-field>
+                </div>
+                <div class="w-100">
+                    <mat-form-field class="w-100">
+                        <mat-label>Specie</mat-label>
+                        <mat-select formControlName="specie" (selectionChange)="changeBreeds()">
+                            <mat-option *ngFor="let specie of species" [value]="specie">
+                                {{specie.attributes.name}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="w-100">
+                    <mat-form-field class="w-100">
+                        <mat-label>Breed</mat-label>
+                        <mat-select formControlName="breed">
+                            <mat-option *ngFor="let breed of filteredBreeds" [value]="breed">
+                                {{breed.attributes.name}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <button class="button-form" (click)="addPet()">Save</button>
+            </div>
+        </form>
+        <div class="pet-card pet-form mb-4" *ngIf="editMode">
+            <app-pet-note-form [petId]="petId"></app-pet-note-form>
+        </div>
+        <div class="pet-card pet-form" *ngIf="editMode">
+            <app-pet-notes [petId]="petId"></app-pet-notes>
+        </div>
+    </div>
+</div>

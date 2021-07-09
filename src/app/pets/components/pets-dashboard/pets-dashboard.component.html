@@ -1,0 +1,12 @@
+<div class="d-flex flex-row justify-content-center">
+  <div class="d-flex flex-column flex-wrap">
+    <app-pet-filters (onFiltersChanged)="onFiltersChange()" [species]="species" [breeds]="breeds"></app-pet-filters>
+    <div class="pets-container">
+      <app-pet-card *ngFor="let pet of filteredPets" [pet]="pet"></app-pet-card>
+    </div>
+  </div>
+</div>
+
+<div class="add-pet" (click)="navigateToPetForm()">
+  +
+</div>

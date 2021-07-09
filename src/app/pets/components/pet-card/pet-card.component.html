@@ -1,0 +1,11 @@
+<div class="pet-card pet-card-small" (click)="navigateToEdit()">
+    <img class="pet-img"  [src]="'assets/img/' + pet.img" />
+    <div class="pet-name">
+        <div>Name</div>
+        <div>{{pet.attributes.name}}</div>
+    </div>
+    <div class="pet-date">
+        <div>Date</div>
+        <div> {{pet.attributes.dateOfBirth}}</div>
+    </div>
+</div>

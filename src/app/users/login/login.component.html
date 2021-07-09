@@ -1,0 +1,11 @@
+<div class="d-flex justify-content-center">
+  <form [formGroup]="loginForm" class="d-flex flex-column card-main card-login" (submit)="submit()">
+    <label class="input-label">Email</label>
+    <input formControlName="email" type="text" class="input-main mb-3" />
+    <label class="input-label">Passwrod</label>
+    <input formControlName="password" type="password" class="input-main mb-4" />
+    <button class="button-main">
+      Login
+    </button>
+  </form>
+</div>

@@ -1,0 +1,22 @@
+<div class="d-flex flex-row justify-content-center filter-column">
+  <div class="breed" *ngFor="let breed of filteredBreeds" (click)="selectBreed(breed)">
+    <ng-container *ngIf="breed.selected">
+      <div class="dot-selected"></div>
+    </ng-container>
+    <ng-container  *ngIf="!breed.selected">
+      <div class="dot"></div>
+    </ng-container>
+    {{breed.attributes.name}}
+  </div>
+</div>
+<div class="d-flex flex-row justify-content-center filter-column">
+  <div class="specie" *ngFor="let specie of species" (click)="selectSpecie(specie)">
+    <ng-container *ngIf="specie.selected">
+      <div class="dot-selected"></div>
+    </ng-container>
+    <ng-container  *ngIf="!specie.selected">
+      <div class="dot"></div>
+    </ng-container>
+    {{specie.attributes.name}}
+  </div>
+</div>

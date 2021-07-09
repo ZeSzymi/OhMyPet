@@ -1,0 +1,93 @@
+/* You can add global styles to this file, and also import other style files */
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import './assets/css/variables.scss';
+@font-face {
+    font-family: 'Rubik';
+    src: url(assets/Rubik-Regular.ttf) format("truetype");
+}
+
+html body {
+    font-family: 'Rubik', sans-serif;
+    background-color: $background-color;
+    color: #222222;
+}
+
+.button-main {
+    border: none;
+    background-color: $primary-color;
+    border-radius: 10px;
+    padding: 4px;
+    box-shadow: $box-shadow;
+}
+
+.button-form {
+    border: none;
+    background-color: $primary-color;
+    border-radius: 10px;
+    padding: 6px;
+    box-shadow: $box-shadow;
+}
+
+.delete-button {
+    border: none;
+    background-color: $primary-color;
+    border-radius: 10px;
+    padding: 6px;
+    border: 1px solid #b44646;
+    color: #b44646;
+    box-shadow: $box-shadow;
+}
+
+.delete-button:hover {
+    background-color: #b44646;
+    color: white;
+}
+
+.button-form:hover {
+    background-color: $secondary-color;
+}
+
+.button-main:hover {
+    background-color: $secondary-color;
+}
+
+.input-main {
+    border: none;
+    padding: 4px;
+    border-radius: 10px;
+    box-shadow: $box-shadow;
+}
+
+.card-main {
+    background-color: $card-color;
+    padding: 20px;
+    padding-bottom: 25px;
+    box-shadow: $box-shadow;
+    border-radius: 0px;
+    border: none;
+}
+
+.input-label {
+    text-align: right;
+}
+
+label {
+    font-size: 12px;
+}
+
+.card-login {
+    margin-top: 150px
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.pet-card {
+    box-shadow: $box-shadow;
+    margin-left: 15px;
+    border-radius: 10px;
+    background-color: $primary-color;
+}
+
+
+
