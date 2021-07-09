@@ -1,11 +1,19 @@
 export const petImage: PetImage[] = [
     {
-        id: "41cde3ff-8747-4ee4-a396-e1a70eb8260e",
+        id: "e24b4649-6d9e-4e45-b832-30ffc342d623",
         img: "cat.png"
     },
     {
-        id: "da2e5a8e-9a61-4be8-ba90-8a59109027e6",
+        id: "1188f10b-0088-4757-adfd-11caee0d6b85",
         img: "dog.png"
+    },
+    {
+        id: "8e96d55b-ef36-40c1-b501-cb4fce034a9e",
+        img: "husky.jpg"
+    },
+    {
+        id: "3172bf77-2f25-453b-8f2f-c7034caef515",
+        img: "orange.jpg"
     }
 ]
 

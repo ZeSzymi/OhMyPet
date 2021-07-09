@@ -48,9 +48,10 @@ export class PetFormComponent implements OnInit {
       this.petsService.getPet(this.petId).subscribe(pet => this.editFlow(pet))
     }
 
-    this.changeImage(firstSpecie.attributes.id);
+    this.changeImage();
 
   }
+
 
   editFlow(pet: Pet) {
     const selctedBreed = this.breeds.find(breed => breed.attributes.id == pet.attributes.breedId);
@@ -62,7 +63,7 @@ export class PetFormComponent implements OnInit {
       selctedBreed,
       selectedSpecie
     })
-    this.changeImage(selectedSpecie?.attributes.id);
+    this.changeImage();
     this.editMode = true;
   }
 
@@ -72,11 +73,12 @@ export class PetFormComponent implements OnInit {
     this.petForm.patchValue({
       breed : this.filteredBreeds[0]
     })
-    this.changeImage(specie?.attributes.id);
+    this.changeImage();
   }
 
-  changeImage(specieId?: string)  {
-    const img = petImage.find(petImage => petImage.id === specieId);
+  changeImage()  {
+    const breedId = this.petForm.value.breed.attributes.id;
+    const img = petImage.find(petImage => petImage.id === breedId);
     this.petImage = img?.img || 'dog.png';
   }
 

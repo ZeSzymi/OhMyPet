@@ -21,7 +21,7 @@ export class PetsDataService {
         .pipe(
             map(model => { 
             return model.data.map(pet => {
-                const img = petImage.find(petImg => petImg.id === pet.attributes.speciesId)?.img ?? "dog.png";
+                const img = petImage.find(petImg => petImg.id === pet.attributes.breedId)?.img ?? "dog.png";
                 return {...pet, img }
             })
         }));
@@ -32,7 +32,7 @@ export class PetsDataService {
         .pipe(
             map(model => { 
                 const pet = model.data;
-                const img = petImage.find(petImg => petImg.id === pet.attributes.speciesId)?.img ?? "dog.png";
+                const img = petImage.find(petImg => petImg.id === pet.attributes.breedId)?.img ?? "dog.png";
                 return {...pet, img }
             })
         );

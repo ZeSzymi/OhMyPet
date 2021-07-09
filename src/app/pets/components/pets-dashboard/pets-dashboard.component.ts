@@ -20,7 +20,11 @@ export class PetsDashboardComponent implements OnInit {
   constructor(private petsService: PetsDataService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    this.petsService.getPets().subscribe((response: any) => this.pets = response);
+    this.petsService.getPets().subscribe((response: any) => 
+    { 
+      this.pets = response
+      this.onFiltersChange();
+    });
     this.route.parent?.data.subscribe((data) => {
       this.breeds = data.breeds;
       this.species =  data.species;

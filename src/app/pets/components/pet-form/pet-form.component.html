@@ -32,7 +32,7 @@
                 <div class="w-100">
                     <mat-form-field class="w-100">
                         <mat-label>Breed</mat-label>
-                        <mat-select formControlName="breed">
+                        <mat-select formControlName="breed" (selectionChange)="changeImage()">
                             <mat-option *ngFor="let breed of filteredBreeds" [value]="breed">
                                 {{breed.attributes.name}}
                             </mat-option>
